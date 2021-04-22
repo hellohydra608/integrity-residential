@@ -1,6 +1,6 @@
 $(function () {
     $(
-        "#contactForm input,#contactForm textarea,#contactForm button"
+        "#contactForm input,#contactForm textarea,#contactForm button,#contactForm select"
     ).jqBootstrapValidation({
         preventSubmit: true,
         submitError: function ($form, event, errors) {
@@ -9,7 +9,15 @@ $(function () {
         submitSuccess: function ($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
+            var resume = $("input#resume").val();
             var name = $("input#name").val();
+            var street = $("input#street").val();
+            var state = $("input#state").val();
+            var city = $("input#city").val();
+            var startDate = $("input#startDate").val();
+            var position = $("input#position").val();
+            var dob = $("input#dob").val();
+            var ssn = $("input#ssn").val();
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
@@ -24,7 +32,15 @@ $(function () {
                 url: "/mail/contact_me.php",
                 type: "POST",
                 data: {
+                    resume: resume,
                     name: name,
+                    street: street,
+                    city: city,
+                    state: state,
+                    startDate: startDate,
+                    position: position,
+                    dob: dob,
+                    ssn: ssn,
                     phone: phone,
                     email: email,
                     message: message,
