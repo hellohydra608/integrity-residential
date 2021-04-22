@@ -149,30 +149,34 @@
             <div class="card-body p-5 border-top border-primary border-md">
               <h2 class="lined">Employment <span class="text-primary">Application</span></h2>
               <p class="text-muted">Please fill out the form below.</p>
-              <form class="make-appointment-form" action="#">
+              <form class="make-appointment-form" id="contactForm" name="sentMessage" novalidate="novalidate">
                 <div class="row">
                   <div class="form-group col-lg-12 mb-4">
                     <label for="file">Resume</label>
-                    <input type="file"  name="resume" >
+                    <input type="file" id="resume" name="resume" >
                   </div>
-                  <div class="form-group col-lg-6 mb-4">
-                    <input class="form-control" type="text" name="firstName" placeholder="First Name">
+                  <div class="form-group col-lg-12 mb-4">
+                    <input id="name" class="form-control" type="text" name="name" placeholder="Full Name" required="required" data-validation-required-message="Please enter your full name.">
+                    <p class="help-block text-danger"></p>
                   </div>
-                  <div class="form-group col-lg-6 mb-4">
+                  <!-- <div class="form-group col-lg-6 mb-4">
                     <input class="form-control" type="text" name="lastName" placeholder="Last Name">
-                  </div>
+                  </div> -->
                   <div class="form-group col-lg-12 mb-4">
-                    <input class="form-control" type="text" name="streetAddress" placeholder="Street Address">
+                    <input id="street" class="form-control" type="text" name="street" placeholder="Street Address" required="required" data-validation-required-message="Please enter street address.">
+                    <p class="help-block text-danger"></p>
                   </div>
-                  <div class="form-group col-lg-12 mb-4">
-                    <input class="form-control" type="text" name="streetAddress2" placeholder="Street Address Line 2">
+                  <!-- <div class="form-group col-lg-12 mb-4">
+                    <input id="street2" class="form-control" type="text" name="streetAddress2" placeholder="Street Address Line 2" required="required" data-validation-required-message="Please enter street address.">
+                    <p class="help-block text-danger"></p>
+                  </div> -->
+                  <div class="form-group col-lg-6 mb-4">
+                    <input id="city" class="form-control" type="text" name="city" placeholder="City" required="required" data-validation-required-message="Please enter your city.">
+                    <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group col-lg-6 mb-4">
-                    <input class="form-control" type="text" name="firstName" placeholder="City">
-                  </div>
-                  <div class="form-group col-lg-6 mb-4">
-                    <select class="form-control py-0" name="State">
-                      <option value="">State</option>
+                    <select id="state" class="form-control py-0" name="state" required="required" data-validation-required-message="Please enter your state.">
+                      <option>State</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -225,15 +229,19 @@
                       <option value="WI">Wisconsin</option>
                       <option value="WY">Wyoming</option>
                     </select>
+                    <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group col-lg-6 mb-4">
-                    <input class="form-control" type="tel" name="phone" placeholder="Phone Number">
+                    <input id="phone" class="form-control" type="tel" name="phone" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
+                    <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group col-lg-6 mb-4">
-                    <input class="form-control" type="email" name="email" placeholder="Email">
+                    <input class="form-control" type="email" name="email" placeholder="Email" required="required" data-validation-required-message="Please enter your email.">
+                    <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group col-lg-6 mb-4">
-                    <input class="form-control" type="text" name="startDate" placeholder="Date Available To Start">
+                    <input id="startDate" class="form-control" type="text" name="startDate" placeholder="Date Available To Start" required="required" data-validation-required-message="Please enter your available start date.">
+                    <p class="help-block text-danger"></p>
                   </div>
                   <!-- <div class="form-group col-lg-6 mb-4">
                     <select class="form-control py-0" name="gender">
@@ -245,7 +253,7 @@
                     </select>
                   </div> -->
                   <div class="form-group col-lg-6 mb-4">
-                    <select class="form-control py-0" name="position">
+                    <select id="position" class="form-control py-0" name="position" required="required" data-validation-required-message="Please enter your desired position.">
                       <option value="">Position</option>
                       <option value="behavioral">Behavioral Care Technician</option>
                       <option value="Certified">Certified Nursing Assistant </option>
@@ -253,13 +261,17 @@
                     </select>
                   </div>
                   <div class="form-group col-lg-6 mb-4">
-                    <input class="form-control" type="text" name="dob" placeholder="Date of Birth">
-                  </div><div class="form-group col-lg-6 mb-4">
-                    <input class="form-control" type="password" name="ssn" placeholder="Social Security Number">
+                    <input id="dob" class="form-control" type="text" name="dob" placeholder="Date of Birth" required="required" data-validation-required-message="Please enter your date of birth.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group col-lg-6 mb-4">
+                    <input id="ssn" class="form-control" type="password" name="ssn" placeholder="Social Security Number" required="required" data-validation-required-message="Please enter your social security number.">
+                    <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group col-lg-12">
-                    <textarea class="form-control" name="summary" rows="5"
-                      placeholder="Please give us a brief summary on what makes you a perfect fit for the job."></textarea>
+                    <textarea id="message" class="form-control" name="message" rows="5"
+                      placeholder="Please give us a brief summary on what makes you a good candidate." required="required" data-validation-required-message="Please enter your brief summary."></textarea>
+                      <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group col-lg-12">
                     <button class="btn btn-primary btn-block" type="submit">Submit Application</button>
@@ -413,6 +425,9 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="js/front.js"></script>
+  <!-- Contact form JS-->
+  <script src="mail/jqBootstrapValidation.js"></script>
+  <script src="mail/contact_me.js"></script>
   <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
